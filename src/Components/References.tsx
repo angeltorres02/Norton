@@ -1,8 +1,8 @@
 function References() {
   return (
-    <div>
-      <h3>Referencias: </h3>
-      <p>
+    <div className="grid items-center mx-40 mt-16 mb-4">
+      <h3 className="text-sm">Referencias: </h3>
+      <p className="text-sm">
         1) García-Fernández, Francisco Pedro, Pedro L. Pancorbo-Hidalgo, y J.
         Javier Soldevilla Agreda. 2011. “Escalas de valoración del riesgo de
         desarrollar úlceras por presión en la infancia”. Gerokomos 22 (1):

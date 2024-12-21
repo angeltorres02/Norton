@@ -92,10 +92,16 @@ function Form({ setTotalPoints }: FormProps) {
     }));
   }
 
+  const flag = data.map((i) => i.points === 0);
+
   useEffect(() => {
+    console.log(flag);
+
+    if (flag.includes(true)) return;
+
     const total = data.reduce((acc, item) => acc + item.points, 0);
     setTotalPoints(total);
-  }, [data, setTotalPoints]);
+  }, [data, setTotalPoints, flag]);
 
   return (
     <div className="flex justify-center items-center">
@@ -121,7 +127,7 @@ function Form({ setTotalPoints }: FormProps) {
         </thead>
         <tbody>
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id} className="odd:bg-blue-100 even:bg-blue-200">
+            <tr key={row.id} className="even:bg-blue-100 ">
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}

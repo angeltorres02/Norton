@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 interface MetricsProps {
   totalPoints: number;
 }
@@ -14,11 +16,19 @@ function Metrics({ totalPoints }: MetricsProps) {
           </p>
         </div>
       </div>
-      <div id="wrapper" className="flex justify-center w-full m-8">
+      <div id="wrapper" className="flex justify-center w-full my-8">
         <div className="inline-grid">
-          <em className="text-center">Interpretacion</em>
-          <p className="">Riesgo alto: Puntuacion &le; 12</p>
-          <p>Riesgo moderado: Puntuacion &ge; 16</p>
+          <em className="text-center border border-gray-700">Interpretacion</em>
+          <p
+            className={clsx(
+              totalPoints > 5 && totalPoints <= 12 ? "bg-green-200" : ""
+            )}
+          >
+            Riesgo alto: Puntuacion &le; 12
+          </p>
+          <p className={clsx(totalPoints >= 16 ? "bg-green-200" : "")}>
+            Riesgo moderado: Puntuacion &ge; 16
+          </p>
         </div>
       </div>
     </>
